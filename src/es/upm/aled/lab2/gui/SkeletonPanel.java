@@ -56,12 +56,17 @@ public class SkeletonPanel extends JPanel {
 	}
 
 	private void drawSkeleton(Graphics g, double parentX, double parentY, Node node) {
-		// TODO: Ponga comentarios en este método
+		//Fills an oval which center is the absolute position of the father segment, x and y coordinates, with its correspondent width and length
 		g.fillOval((int) node.getX() - 4, (int) node.getY() - 4, 8, 8);
+		
+		//Draws a line between the first node (the parent node) and the next one. 
 		g.drawLine((int) parentX, (int) parentY, (int) node.getX(), (int) node.getY());
+		
+		//If there is no more child nodes, stop drawing, signaling the end of the representation on that end.
 		if (node.getChildren().size() == 0) {
 			return;
 		}
+		//For each child node the parent node has, draw the tree of NOdes recursively.
 		for (Node child : node.getChildren()) {
 			drawSkeleton(g, node.getX(), node.getY(), child);
 		}
