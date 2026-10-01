@@ -40,10 +40,10 @@ public class ForwardKinematics {
 		
 		if(link.getChildren().size()!=0) {
 			for(Segment segmento : link.getChildren()) {
-				accumulatedAngle += segmento.getAngle();
+				double angulo = accumulatedAngle + segmento.getAngle();
 				
 				
-					Node n2=computePositions(segmento,newX,newY,accumulatedAngle);
+					Node n2=computePositions(segmento,newX,newY,angulo);
 					nodo.addChild(n2);
 			}
 		}
