@@ -49,10 +49,10 @@ public class ForwardKinematics {
 					nodo.addChild(n2);
 			}
 		}
-		long runningTime = System.nanoTime() - startTime;
-		System.out.println("Tiempo de computePositions para un segmento con "
-							+ link.getChildren().size() + " hijos: "
-							+ runningTime + " nanosegundos");
+		//long runningTime = System.nanoTime() - startTime;
+		//System.out.println("Tiempo de computePositions para un segmento con "
+			//				+ link.getChildren().size() + " hijos: "
+				//			+ runningTime + " nanosegundos");
 							
 	return nodo;
 	}
